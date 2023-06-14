@@ -18,7 +18,14 @@ color: ${(props) => props.theme.color.text};
      : props.theme.fontFamily.mono};
 }
 
+label{
+    border: none;
+    border-color: ${(props) => props.theme.color.background};
+  }
+
 button{
+    border: none;
+    border-color: ${(props) => props.theme.color.background};
   font-family: ${(props) =>
     props.font === "Sans Serif"
       ? props.theme.fontFamily.sans

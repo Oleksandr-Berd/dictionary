@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'utilities/GlobalStyles';
 import darkTheme from 'utilities/darkTheme';
@@ -10,10 +10,15 @@ import AppBar from 'components/AppBar/AppBar';
 
 
 const App: React.FC = () => {
-  const [font, setFont] = useState("sansSerif")
+  const [font, setFont] = useState("sansSerif");
+  const [checked, setChecked] = useState(true);
 
   const handleSelect = (eventKey: string) => {
     setFont(eventKey)
+  }
+
+  const handleToggle = () => {
+    setChecked(!checked)
   }
 
   let fontLabel
@@ -33,13 +38,6 @@ const App: React.FC = () => {
       default:
         fontLabel = "Sans Serif";
     }
-  
-
-  
-
-
-  console.log(fontLabel);
-
 
   return (
     <div className="App">
@@ -47,7 +45,7 @@ const App: React.FC = () => {
         <GlobalStyles font={fontLabel} />
         <SharedLayout>
           <Header>
-            <AppBar handleSelect={handleSelect} fontLabel={fontLabel} />
+            <AppBar handleSelect={handleSelect} fontLabel={fontLabel} checked={checked} handleToggle={handleToggle } />
           </Header>
           This is my App!
         </SharedLayout>

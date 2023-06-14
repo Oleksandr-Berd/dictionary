@@ -57,7 +57,7 @@ const darkTheme: object = {
   },
 
   weight: {
-    bold: "600",
+    bold: "700",
     normal: "400",
   },
 
