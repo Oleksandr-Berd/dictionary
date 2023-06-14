@@ -1,10 +1,10 @@
-
+import * as SC from "./SharedLayoutStyled"
 interface IProps {
     children: React.ReactNode,
 }
 
 const SharedLayout: React.FC<IProps> = ({children}) => {
-    return (<div>{children}</div> );
+    return (<SC.CustomSharedLayout>{children}</SC.CustomSharedLayout> );
 }
  
 export default SharedLayout;
