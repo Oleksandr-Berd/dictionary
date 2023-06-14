@@ -1,4 +1,4 @@
-const darkTheme: object = {
+const lightTheme: object = {
   space: [
     "0px", //0
     "4px", //1
@@ -69,9 +69,9 @@ const darkTheme: object = {
   color: {
     hover: "#A445ED",
     error: "#FF5252",
-    text: "#fff",
+    text: "#2D2D2D",
     secondaryText: "#757575",
-      background: "#050505",
+    background: "#E9E9E9",
     border: "1px solid #979797",
 
     gun: "#253347",
@@ -94,4 +94,4 @@ const darkTheme: object = {
   ],
 };
 
-export default darkTheme;
+export default lightTheme;
