@@ -14,9 +14,9 @@ const FontMenu:React.FC<IProps> = ({handleSelect, fontLabel}) => {
                 <SC.ToggleTitle>{fontLabel}</SC.ToggleTitle>
             </SC.CustomDropdown>
             <Dropdown.Menu >
-                <Dropdown.Item eventKey={'sansSerif'} onChange={handleSelect}>Sans Serif</Dropdown.Item>
-                <Dropdown.Item eventKey={'serif'} onChange={handleSelect}>Serif</Dropdown.Item>
-                <Dropdown.Item eventKey={'mono'} onChange={handleSelect}>Mono</Dropdown.Item>
+                <SC.DropDownItem eventKey={'sansSerif'} onChange={handleSelect}>Sans Serif</SC.DropDownItem>
+                <SC.DropDownItem eventKey={'serif'} onChange={handleSelect}>Serif</SC.DropDownItem>
+                <SC.DropDownItem eventKey={'mono'} onChange={handleSelect}>Mono</SC.DropDownItem>
             </Dropdown.Menu>
         </Dropdown>
     </SC.FontMenu> );

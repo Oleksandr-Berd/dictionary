@@ -2,8 +2,8 @@ import { Dropdown } from "react-bootstrap"
 import styled from "styled-components"
 
 export const FontMenu = styled.div`
-margin-right: ${props => props.theme.space[4]};
-`
+  margin-right: ${(props) => props.theme.space[4]};
+`;
 
 export const CustomDropdown = styled(Dropdown.Toggle)`
   display: flex;
@@ -15,26 +15,27 @@ export const CustomDropdown = styled(Dropdown.Toggle)`
 
   border: none;
   border-radius: 0;
-  border-right: 1px solid #e9e9e9;
 
-  /* &:hover,
-  &:focus,
-  &:checked {
-    background-color: transparent;
-    border-right: 1px solid #e9e9e9;
-    color: ${(props) => props.theme.color.auth};
-  } */
+  color: ${(props) => props.theme.color.hover};
 
   &&& {
     background-color: transparent;
-    border-right: 1px solid #e9e9e9;
+    border-right: ${(props) => props.theme.color.border};
+    color: ${(props) => props.theme.color.hover};
   }
 `;
 
 export const ToggleTitle = styled.h3`
   margin-right: ${(props) => props.theme.space[4]};
 
-  font-weight: ${props => props.theme.weight.bold};
-  font-size: ${props => props.theme.size.S};
+  font-weight: ${(props) => props.theme.weight.bold};
+  font-size: ${(props) => props.theme.size.S};
   line-height: 1.71;
+  color: ${(props) => props.theme.color.text};
+`;
+
+export const DropDownItem = styled(Dropdown.Item)`
+  &:hover {
+    color: ${(props) => props.theme.color.hover};
+  }
 `;

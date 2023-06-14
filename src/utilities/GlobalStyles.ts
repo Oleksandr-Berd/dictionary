@@ -26,6 +26,7 @@ label{
 button{
     border: none;
     border-color: ${(props) => props.theme.color.background};
+color: ${(props) => props.theme.color.text};
   font-family: ${(props) =>
     props.font === "Sans Serif"
       ? props.theme.fontFamily.sans

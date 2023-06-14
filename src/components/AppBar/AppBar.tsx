@@ -1,4 +1,6 @@
 
+import { BsSun } from 'react-icons/bs'
+
 import * as SC from "./AppBarStyled"
 
 import { ReactComponent as MoonSvg } from "assets/icons/iconoir_half-moon.svg"
@@ -15,7 +17,7 @@ interface IProps {
 const AppBar: React.FC<IProps> = ({ handleSelect, fontLabel, checked, handleToggle }) => {
 
     console.log(checked);
-    
+
     let toggleTheme
 
     if (checked) {
@@ -23,7 +25,7 @@ const AppBar: React.FC<IProps> = ({ handleSelect, fontLabel, checked, handleTogg
     } else {
         toggleTheme = lightToggle
     }
-    
+
     return (<SC.AppBar>
         <FontMenu handleSelect={handleSelect} fontLabel={fontLabel} />
         <SC.CustomToggleButton
@@ -33,9 +35,9 @@ const AppBar: React.FC<IProps> = ({ handleSelect, fontLabel, checked, handleTogg
             value="1"
             onChange={handleToggle}
         >
-           <img src={toggleTheme} alt="toggle" />
+            <img src={toggleTheme} alt="toggle" />
         </SC.CustomToggleButton>
-        <MoonSvg />
+        {checked ? <MoonSvg /> : <BsSun size={20}/>}
     </SC.AppBar>);
 }
 

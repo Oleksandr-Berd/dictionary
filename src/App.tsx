@@ -6,6 +6,7 @@ import darkTheme from 'utilities/darkTheme';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import Header from 'components/Header/Header';
 import AppBar from 'components/AppBar/AppBar';
+import lightTheme from 'utilities/lightTheme';
 
 
 
@@ -41,7 +42,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={checked ? darkTheme : lightTheme}>
         <GlobalStyles font={fontLabel} />
         <SharedLayout>
           <Header>
