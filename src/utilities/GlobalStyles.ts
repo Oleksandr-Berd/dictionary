@@ -1,27 +1,30 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
-
-@font-face {
-  font-family: "Inconsolata-Regular";
-  src: local("Inconsolata-Regular"),
-    url(("assets/fonts/inconsolata/static/Inconsolata-Regular.ttf")) format("truetype");
+interface IProps {
+  font: string & any;
 }
 
-@font-face {
-  font-family: "Inter-Regular";
-  src: local("Inter-Regular"),
-    url(("assets/fonts/inter/static/Inter-Regular.ttf")) format("truetype");
-}
-
-@font-face {
-  font-family: "Lora-Regular";
-  src: local("Lora-Regular"),
-    url(("assets/fonts/lora/static/Lora-Regular.ttf")) format("truetype");
-}
+export const GlobalStyles = createGlobalStyle<IProps>`
 
 body{
- 
+ background-color: ${(props) => props.theme.color.background};
+color: ${(props) => props.theme.color.text};
+
+ font-family: ${(props) =>
+   props.font === "Sans Serif"
+     ? props.theme.fontFamily.sans
+     : props.font === "Serif"
+     ? props.theme.fontFamily.serif
+     : props.theme.fontFamily.mono};
+}
+
+button{
+  font-family: ${(props) =>
+    props.font === "Sans Serif"
+      ? props.theme.fontFamily.sans
+      : props.font === "Serif"
+      ? props.theme.fontFamily.serif
+      : props.theme.fontFamily.mono};
 }
 
 h1, h2, h3, h4 , h5 ,h6{

@@ -1,12 +1,15 @@
 import * as SC from "./HeaderStyled"
 
 import { ReactComponent as LogoSvg } from "assets/icons/iconoir_book.svg"
-import AppBar from "components/AppBar/AppBar";
 
-const Header: React.FC = () => {
+interface IProps {
+    children: React.ReactNode,
+}
+
+const Header: React.FC<IProps> = ({children}) => {
     return (<SC.Header>
         <LogoSvg />
-        <AppBar/>
+        {children}
     </SC.Header> );
 }
  
