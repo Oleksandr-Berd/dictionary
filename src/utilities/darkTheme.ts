@@ -9,10 +9,10 @@ const darkTheme: object = {
     "24px", //6
     "28px", //7
     "32px", //8
-        "36px", //9
+    "36px", //9
     "40px", //10
-        "48px", //11
-        "56px", //12
+    "48px", //11
+    "56px", //12
     "72px", //13
     "64px", //14
     "128px", //15
@@ -62,7 +62,9 @@ const darkTheme: object = {
   },
 
   fontFamily: {
-    text: "Inter-Regular",
+    mono: "Inconsolata-Regular",
+    sans: "Inter-Regular",
+    serif: "Lora-Regular",
   },
   color: {
     hover: "#A445ED",
