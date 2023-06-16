@@ -2,10 +2,14 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 
 import * as SC from "./SearchStyled"
-import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 interface IValue{
     query: "";
+}
+
+interface IProps{
+    submit:(query:string)=>void
 }
 
 const InputDataSchema = Yup.object({
@@ -15,10 +19,8 @@ const InputDataSchema = Yup.object({
         .max(50, 'Query cannot exceed 50 characters'),
 });
 
-const customId = "";
 
-
-const Search = () => {
+const Search:React.FC<IProps> = ({submit}) => {
 
     const formik = useFormik<IValue>({
         initialValues: {
@@ -34,14 +36,16 @@ const Search = () => {
     const handleValuesChange = (evt: React.ChangeEvent<HTMLInputElement>): void => {
 
 
-        setTimeout(() => { formik.handleChange(evt) }, 300)
-
+        setTimeout(() => { formik.handleChange(evt) }, 500)
     }
 
-    const queryError = formik.errors.query ? formik.errors.query : null;
+    useEffect(() => {
+        if (formik.values.query !== "") submit(formik.values.query)
+        
+    }, [formik.values.query, submit])
     
-    console.log(queryError);
 
+    const queryError = formik.errors.query ? formik.errors.query : null;
 
     return (
         <SC.Form>
