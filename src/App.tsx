@@ -7,6 +7,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import Header from 'components/Header/Header';
 import AppBar from 'components/AppBar/AppBar';
 import lightTheme from 'utilities/lightTheme';
+import Search from 'components/Search/Search';
 
 
 
@@ -48,7 +49,7 @@ const App: React.FC = () => {
           <Header>
             <AppBar handleSelect={handleSelect} fontLabel={fontLabel} checked={checked} handleToggle={handleToggle } />
           </Header>
-          This is my App!
+          <Search/>
         </SharedLayout>
       </ThemeProvider>
     </div>

@@ -71,7 +71,7 @@ const darkTheme: object = {
     error: "#FF5252",
     text: "#fff",
     secondaryText: "#757575",
-      background: "#050505",
+    background: "#050505",
     border: "1px solid #979797",
 
     gun: "#253347",

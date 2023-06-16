@@ -16,8 +16,6 @@ interface IProps {
 
 const AppBar: React.FC<IProps> = ({ handleSelect, fontLabel, checked, handleToggle }) => {
 
-    console.log(checked);
-
     let toggleTheme
 
     if (checked) {
