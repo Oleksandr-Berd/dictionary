@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import pathMobile from "assets/icons/Path 2.png"
+import {ReactComponent as PathSvg} from "assets/icons/Path 2.svg"
 
 import * as SC from './WordStyled'
 
@@ -9,7 +10,7 @@ interface IProps {
 }
 
 const WordComponent: React.FC<IProps> = ({ data }) => {
-
+    const [isHovered, setIsHovered] = useState(false);
 
     const { word, phonetics } = data[0]
 
@@ -25,6 +26,14 @@ const WordComponent: React.FC<IProps> = ({ data }) => {
         }
     };
 
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
     return (
         <SC.Container>
             <SC.TitleContainer>
@@ -32,10 +41,12 @@ const WordComponent: React.FC<IProps> = ({ data }) => {
                     <h3>{word}</h3>
                     <p>{validPhonetic ? validPhonetic.text : null}</p>
                 </div>
-                <div>
-                    <button onClick={handlePlayAudio}><img src={pathMobile} alt="audio" /></button>
+                <SC.AudioContainer onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    {isHovered ? <SC.ImageHovered/>: <SC.Image />}
+                    <SC.Button onClick={handlePlayAudio}></SC.Button>
+                   
                     <audio ref={audioRef} src={validPhonetic ? validPhonetic.audio : null} />
-                </div>
+                </SC.AudioContainer>
             </SC.TitleContainer>
         </SC.Container>
     );
