@@ -10,11 +10,16 @@ export const CustomToggleButton = styled(ToggleButton)`
   padding: 0;
   margin-right: ${(props) => props.theme.space[3]};
 
+
   background-color: ${(props) => props.theme.color.background};
   border: none;
 
   &&& {
     background-color: transparent;
 
+  }
+
+  @media (min-width: 768px){
+    margin-right: ${props => props.theme.space[5]};
   }
 `;

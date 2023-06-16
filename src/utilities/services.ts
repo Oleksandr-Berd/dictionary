@@ -1,5 +1,4 @@
-import axios from "axios"
-
+import axios from "axios";
 
 const instance = axios.create({
   baseURL: "https://api.dictionaryapi.dev/api/v2/entries/en/",
@@ -7,11 +6,11 @@ const instance = axios.create({
 });
 
 export const fetchWord = async (query: string) => {
-    try {
-        const response = await instance.get(`/${query}`)
+  try {
+    const response = await instance.get(`/${query}`);
 
-        return response.data
-    } catch (error:any) {
-     return error.response.data.message    
-    }
-}
+    return response.data;
+  } catch (error: any) {
+    return error.response.data.message;
+  }
+};

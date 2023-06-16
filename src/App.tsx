@@ -72,10 +72,6 @@ const App: React.FC = () => {
     
   }, [finalQuery])
 
-  
-
-console.log(isLoading);
-
 
   return (
     <div className="App">    
