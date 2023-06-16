@@ -71,8 +71,9 @@ const lightTheme: object = {
     error: "#FF5252",
     text: "#2D2D2D",
     secondaryText: "#757575",
-    background: "#E9E9E9",
-    border: "1px solid #979797",
+    background: "#fff",
+      border: "1px solid #979797",
+    input:"#f4f4f4",
 
     gun: "#253347",
     electric: "#5E6E85",

@@ -73,6 +73,7 @@ const darkTheme: object = {
     secondaryText: "#757575",
     background: "#050505",
     border: "1px solid #979797",
+    input: "#1f1f1f",
 
     gun: "#253347",
     electric: "#5E6E85",
