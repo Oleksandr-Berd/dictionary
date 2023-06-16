@@ -18,7 +18,7 @@ export const Input = styled.input`
 
   font-size: ${(props) => props.theme.size.N};
   font-weight: ${(props) => props.theme.weight.bold};
-  background-color: #1f1f1f;
+  background-color: ${props => props.theme.color.input};
   color: ${(props) => props.theme.color.white};
 
   border: 1px solid #000;
