@@ -1,12 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { BiSearchAlt } from "react-icons/bi";
-
 
 export const Form = styled.form`
   position: relative;
 
   margin-left: ${(props) => props.theme.space[6]};
   margin-right: ${(props) => props.theme.space[6]};
+
+  @media (min-width: 768px) {
+    margin-left: 39px;
+    margin-right: 40px;
+  }
 `;
 
 export const Input = styled.input`
@@ -18,7 +22,7 @@ export const Input = styled.input`
 
   font-size: ${(props) => props.theme.size.N};
   font-weight: ${(props) => props.theme.weight.bold};
-  background-color: ${props => props.theme.color.input};
+  background-color: ${(props) => props.theme.color.input};
   color: ${(props) => props.theme.color.white};
 
   border: 1px solid #000;
@@ -27,22 +31,34 @@ export const Input = styled.input`
 
   &:hover,
   &:focus &:focus-within,
-  &:focus-visible, &:active {
+  &:focus-visible,
+  &:active {
     border-color: #a445ed;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 22px;
+    padding-bottom: 21px;
+
+    font-size: ${(props) => props.theme.size.XN};
   }
 `;
 
 export const Icon = styled(BiSearchAlt)`
-position: absolute;
-top: 16px;
-right: 24px;
+  position: absolute;
+  top: 16px;
+  right: 24px;
 
-width: 24px;
-height: 24px;
+  width: 24px;
+  height: 24px;
 
-color: ${props => props.theme.color.hover};
-`
+  color: ${(props) => props.theme.color.hover};
+
+  @media (min-width: 768px){
+    top:24px;
+  }
+`;
 
 export const Error = styled.p`
-color: ${props => props.theme.color.error};
-`
+  color: ${(props) => props.theme.color.error};
+`;

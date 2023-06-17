@@ -77,12 +77,14 @@ const WordComponent: React.FC<IProps> = ({ data }) => {
                 ))
                 : null}
             <SC.PartOfSpeechLine></SC.PartOfSpeechLine>
+            <SC.SourceContainer>
             <SC.SourceTitle>Source: </SC.SourceTitle>
             <ul>
                 {sourceUrls ?
                     (sourceUrls.map((el: string) => <SC.LinkContainer key={el}> <SC.Link>{el}</SC.Link><a href={el}><img src={link} alt='link'></img></a></SC.LinkContainer>))
                     : null}
-            </ul>
+                </ul>
+            </SC.SourceContainer>
         </SC.Container>
     );
 }
