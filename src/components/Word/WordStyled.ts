@@ -13,6 +13,13 @@ export const Container = styled.div`
     padding-left: 39px;
     padding-right: ${(props) => props.theme.space[10]};
   }
+
+  @media (min-width: 1440px) {
+    padding-top: 45px;
+    padding-bottom: 124px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const TitleContainer = styled.div`

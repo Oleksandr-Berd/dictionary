@@ -15,4 +15,11 @@ export const Header = styled.header`
     padding-left: ${(props) => props.theme.space[10]};
     padding-bottom: 54px;
   }
+
+  @media (min-width: 1440px) {
+    padding-top: 58px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 51px;
+  }
 `;

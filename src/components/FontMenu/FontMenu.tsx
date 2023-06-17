@@ -13,11 +13,11 @@ const FontMenu:React.FC<IProps> = ({handleSelect, fontLabel}) => {
             <SC.CustomDropdown variant="success" id="dropdown-basic">
                 <SC.ToggleTitle>{fontLabel}</SC.ToggleTitle>
             </SC.CustomDropdown>
-            <Dropdown.Menu >
+            <SC.DropdownMenu >
                 <SC.DropDownItem eventKey={'sansSerif'} onChange={handleSelect}>Sans Serif</SC.DropDownItem>
                 <SC.DropDownItem eventKey={'serif'} onChange={handleSelect}>Serif</SC.DropDownItem>
                 <SC.DropDownItem eventKey={'mono'} onChange={handleSelect}>Mono</SC.DropDownItem>
-            </Dropdown.Menu>
+            </SC.DropdownMenu>
         </Dropdown>
     </SC.FontMenu> );
 }
