@@ -42,14 +42,31 @@ export const ToggleTitle = styled.h3`
   color: ${(props) => props.theme.color.text};
 
   @media (min-width: 768px){
-
-
     font-size: 18px;
   }
 `;
 
+export const DropdownMenu = styled(Dropdown.Menu)`
+  padding-top: ${(props) => props.theme.space[6]};
+  padding-bottom: ${(props) => props.theme.space[6]};
+  padding-left: ${(props) => props.theme.space[6]};
+  padding-right: 69px;
+
+  background-color: ${(props) => props.theme.color.input};
+  border-radius: 30px;
+  box-shadow: 0px 5px 30px 0px #a445ed;
+`;
+
 export const DropDownItem = styled(Dropdown.Item)`
+color: ${props => props.theme.color.text};
+  font-weight: ${(props) => props.theme.weight.bold};
+
+  &:not(:last-child){
+    margin-bottom: ${props => props.theme.space[4]};
+  }
+
   &:hover {
     color: ${(props) => props.theme.color.hover};
+    background-color: ${(props) => props.theme.color.input};
   }
 `;

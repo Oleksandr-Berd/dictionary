@@ -9,5 +9,8 @@ export const CustomSharedLayout = styled.div`
 
   @media (min-width: 1440px) {
     min-width: ${(props) => props.theme.width.desktop};
+
+    padding-right: 352px;
+    padding-left: 351px;
   }
 `;

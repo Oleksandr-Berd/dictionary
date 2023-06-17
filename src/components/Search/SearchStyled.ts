@@ -11,6 +11,11 @@ export const Form = styled.form`
     margin-left: 39px;
     margin-right: 40px;
   }
+
+  @media (min-width: 1440px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 export const Input = styled.input`

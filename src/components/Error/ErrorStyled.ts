@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  padding-top: ${(props) => props.theme.space[5]};
+  margin-top: 132px;
   padding-left: ${(props) => props.theme.space[6]};
   padding-right: ${(props) => props.theme.space[6]};
 
@@ -9,6 +9,8 @@ export const Container = styled.div`
 `;
 
 export const Error = styled.h3`
+margin-top: 44px;
+
 line-height: 1.5;
 font-style: italic;
 font-weight: ${props => props.theme.weight.bold};
