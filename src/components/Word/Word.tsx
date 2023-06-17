@@ -48,7 +48,7 @@ const WordComponent: React.FC<IProps> = ({ data }) => {
             </SC.TitleContainer>
             {meanings ?
                 meanings.map(({ partOfSpeech, definitions, synonyms }: { partOfSpeech: string; definitions: any[]; synonyms?: string[]}) => (
-                    <>
+                    <div key={partOfSpeech}>
                         <SC.PartOfSpeechContainer>
                             <SC.PartOfSpeech>{partOfSpeech}</SC.PartOfSpeech>
                             <SC.PartOfSpeechLine></SC.PartOfSpeechLine>
@@ -59,30 +59,32 @@ const WordComponent: React.FC<IProps> = ({ data }) => {
                             {definitions.map(({ definition, example }) => (
                                 <SC.MeaningItem key={definition}>
                                     <p>{definition}</p>
-                                   {example ? <SC.Example>"{example}"</SC.Example> : null}
+                                   {example ? <SC.Example >"{example}"</SC.Example> : null}
                                 </SC.MeaningItem>
                             ))}
                         </SC.MeaningList>
                         {synonyms ?
                             (
                                 synonyms.map(el => (
-                                    <SC.SynonymsContainer>
+                                    <SC.SynonymsContainer key={el}>
                                         <SC.SynonymsTitle>Synonyms:</SC.SynonymsTitle>
                                         <SC.SynonymsItem>{el}</SC.SynonymsItem>
                                     </SC.SynonymsContainer>
                                 )))
                             : null}
                         
-                    </>
+                    </div>
                 ))
                 : null}
             <SC.PartOfSpeechLine></SC.PartOfSpeechLine>
+            <SC.SourceContainer>
             <SC.SourceTitle>Source: </SC.SourceTitle>
             <ul>
                 {sourceUrls ?
-                    (sourceUrls.map((el: string) => <SC.LinkContainer> <SC.Link>{el}</SC.Link><a href={el}><img src={link} alt='link'></img></a></SC.LinkContainer>))
+                    (sourceUrls.map((el: string) => <SC.LinkContainer key={el}> <SC.Link>{el}</SC.Link><a href={el}><img src={link} alt='link'></img></a></SC.LinkContainer>))
                     : null}
-            </ul>
+                </ul>
+            </SC.SourceContainer>
         </SC.Container>
     );
 }
